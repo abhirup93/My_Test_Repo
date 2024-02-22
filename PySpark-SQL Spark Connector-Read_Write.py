@@ -36,8 +36,7 @@ adbtablename = dbutils.widgets.get("adbtablename")
 ##Reading Control table usign dbQuery
 try:
     jdbc_db = (
-        spark.read.format("jdbc")
-        .option("driver", driver)
+        spark.read.format(driver_spark)
         .option("url", url)
         .option("query", dbQuery)
         .option("accessToken", access_token)
